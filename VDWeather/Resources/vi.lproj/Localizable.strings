@@ -1,0 +1,153 @@
+
+// Screen CREATE ACCOUNT
+"ca_welcome" = "Welcome to";
+"ca_create_free_account" = "Create a Free Account";
+"ca_create_free_account_message" = "Become a Jio Patient and experience how Jio is revolutionizing healthcare";
+"ca_register_with_facebook" = "Register with Facebook";
+"ca_create_account" = "Create Account";
+"ca_later" = "Later";
+"ca_already_have_account" = "Already have an account?";
+"ca_sign_in_here" = "Sign In Here!";
+"ca_product_name" = "MEDICINE";
+
+// Screen SIGN IN
+"si_title" = "Sign Into TT";
+"si_sign_in_with_facebook" = "Sign in with Facebook";
+"si_or" = "OR";
+"si_phone_number_or_email" = "Phone Number or Email";
+"si_password" = "Password";
+"si_forget_your_password" = "Forget your password?";
+"si_sign_in" = "Sign In";
+
+// Screen LEFT MENU
+"lm_notification" = "Notification";
+"lm_dependents" = "Dependents";
+"lm_my_care_provider" = "My Care Provider";
+"lm_refer_friend_family" = "Refer Friends & Family";
+"lm_tracking" = "Tracking";
+"lm_allergies_reaction" = "Allergies & Reactions";
+"lm_document_images" = "Documents & Images";
+"lm_condition_note" = "Conditions & Notes";
+"lm_insurance" = "Insurance";
+"lm_create_free_profile" = "Create Free Profile";
+"lm_or_sign_in" = "Or Sign In";
+"lm_profile_info" = "Profile";
+"lm_conact_support" = "Contact support";
+"lm_message" = "Messages";
+"lm_prescription" = "Prescription";
+"r_create_account" = "Create Account";
+"r_create_account_message" = "We do not share your phone number with anyone and only use it to contact you for appointment purposes.";
+"r_phone_number" = "Phone Number";
+"r_enter_phone_number" = "Enter Phone Number";
+"r_password" = "Password";
+"r_enter_password" = "Enter Password";
+"r_password_rule" = "Password must be least 8 characters and contain both letters and numbers.";
+"r_next" = "Next";
+
+// Screen Home
+"home_by_medicine_online" = "Buying Drugs Online";
+"home_book_prescription_drugs" = "Booking Prescription Drugs";
+"home_medicince_book_history" = "Medicine Booking History";
+
+// Screen Verification
+"ve_title" = "Verify Phone Number";
+"ve_please_enter_digit" = "Please enter the 6-digit code sent to you at xxx";
+"ve_problem_with_sms" = "Problem with SMS?";
+"ve_resend_code" = "Resend Code";
+"ve_call_me_now" = "Call Me Now";
+"ve_call_message" = "Call or email support to ask any questions you have about booking visits or using the Thuốc Tốt";
+"ve_call_email_support" = "Call or Email Support";
+"ve_seconds" = "Seconds";
+"ve_second" = "Second";
+"ve_not_revice_code" = "If you do not receive your code, we will call you in";
+
+// Screen Prescription
+"pre_add" = "Add New Prescription";
+"pre_image" = "Image";
+"pre_images" = "Images";
+
+// Screen Document & Image
+"di_title" = "Documents & Images";
+"di_add_document" = "Add Document";
+"di_select" = "Select";
+"di_add_page" = "Add Page";
+"di_edit" = "Edit";
+"di_delete" = "Delete";
+"di_page" = "Page";
+"di_pages" = "Pages";
+"di_done" = "Done";
+
+// Screen New Document
+"nd_new_document" = "New Document";
+"nd_title" = "Title";
+"nd_description" = "Description";
+"nd_save" = "Save";
+"nd_cancel" = "Cancel";
+"nd_camera" = "Camera";
+"nd_photo_library" = "Photo Library";
+"nd_exit_document" = "Exitsting Document";
+
+// Screen Profile Info
+"pi_title" = "Your Information";
+"pi_first_name" = "First Name";
+"pi_enter_first_name" = "Enter First Name";
+"pi_last_name" = "Last Name";
+"pi_enter_last_name" = "Enter Last Name";
+"pi_email" = "Email(Optional)";
+"pi_address" = "Address";
+"pi_gender" = "Gender";
+"pi_male" = "Male";
+"pi_female" = "Female";
+"pi_birthday" = "Birthday";
+"pi_next" = "Next";
+"pi_please_enter_first_name" = "Please enter first name";
+"pi_please_enter_last_name" = "Please enter last name";
+"pi_email_invalid" = "Email Invalid";
+"pi_please_select_gender" = "Please select gender";
+"pi_please_select_birthday" = "Please select birthday";
+"pi_please_enter_address" = "Please enter address";
+"pi_save" = "Save";
+
+// Screen New Document Image
+"ndi_new_document" = "New Document";
+"ndi_title" = "Title";
+"ndi_descriotion" = "Decription";
+"ndi_save" = "Save";
+"ndi_edit_document" = "Edit Document";
+"ndi_add_success" = "Add New Document successfully\"";
+
+// Screen Document Detail
+"dod_title" = "Eidit";
+"dod_done" = "Done";
+"dod_name" = "title";
+"dod_descriotion" = "Decription";
+"dod_add_image" = "Add Image";
+"dod_edit" = "Edit";
+"dod_delete" = "Delete";
+"dod_message" = "Do you want to delete?";
+"dod_save" = "Save";
+"dod_image" = "Images";
+"dod_update_success" = "Update successfully";
+"dod_sync_server" = "Save Online";
+"dod_send" = "Send Prescription";
+"dod_delete_message" = "Do you want to delete Document?";
+
+// Screen Image Of Document
+"iod_select" = "Select";
+"iod_done" = "Done";
+"iod_add_image" = "Add Image";
+"iod_delete" = "Delete";
+"iod_delete_message" = "Do you want to delete?";
+
+// Screen Pop up
+"pu_ok" = "Ok";
+"pu_yes" = "Yes";
+"pu_no" = "No";
+"pu_title" = "Medicine";
+"pu_delete_image_message" = "";
+"pu_share" = "Share";
+"pu_save" = "Save";
+"pu_cancel" = "Cancel";
+
+// Screen Messages
+"mes_title" = "Messages";
