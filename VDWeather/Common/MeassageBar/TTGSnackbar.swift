@@ -286,10 +286,10 @@ open class TTGSnackbar: UIView {
     /// ActivityIndicatorViewStyle
     @objc open dynamic var activityIndicatorViewStyle: UIActivityIndicatorView.Style {
         get {
-            return activityIndicatorView.activityIndicatorViewStyle
+            return activityIndicatorView.style
         }
         set {
-            activityIndicatorView.activityIndicatorViewStyle = newValue
+            activityIndicatorView.style = newValue
         }
     }
     
@@ -464,7 +464,7 @@ public extension TTGSnackbar {
         // Create dismiss timer
         dismissTimer = Timer.init(timeInterval: (TimeInterval)(duration.rawValue),
                                   target: self, selector: #selector(dismiss), userInfo: nil, repeats: false)
-        RunLoop.main.add(dismissTimer!, forMode: RunLoopMode.commonModes)
+        RunLoop.main.add(dismissTimer!, forMode: .common)
 
         // Show or hide action button
         iconImageView.isHidden = icon == nil
@@ -759,7 +759,7 @@ private extension TTGSnackbar {
 
         // Notification
         NotificationCenter.default.addObserver(self, selector: #selector(onScreenRotateNotification),
-                                               name: .UIDeviceOrientationDidChange, object: nil)
+                                               name:  UIDevice.orientationDidChangeNotification, object: nil)
         
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.8)
@@ -803,7 +803,7 @@ private extension TTGSnackbar {
         actionButton.titleLabel?.font = actionTextFont
         actionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         actionButton.titleLabel?.numberOfLines = actionTextNumberOfLines
-        actionButton.setTitle(actionText, for: UIControlState())
+        actionButton.setTitle(actionText, for: UIControl.State())
 //        actionButton.setImage(#imageLiteral(resourceName: "ic_featured"), for: .normal)
         actionButton.setTitleColor(actionTextColor, for: UIControl.State())
         actionButton.addTarget(self, action: #selector(doAction(_:)), for: .touchUpInside)
@@ -827,7 +827,7 @@ private extension TTGSnackbar {
         separateView.backgroundColor = UIColor.clear
         contentView.addSubview(separateView)
 
-        activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        activityIndicatorView = UIActivityIndicatorView(style: .white)
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         activityIndicatorView.stopAnimating()
         contentView.addSubview(activityIndicatorView)

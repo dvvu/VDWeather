@@ -8,27 +8,42 @@
 
 import Foundation
 
-protocol HomeViewModelDelegate: class {
+protocol HomeViewModelDelegate: BaseDelegate {
     func reload()
+    func failed(_ error: Error)
 }
 
 class HomeViewModel: BaseViewModel {
     private var useCase: HomeUseCase?
     weak var delegate: HomeViewModelDelegate?
-   
+    var results: PredictionResult?
+    
     init(_ useCase: HomeUseCase) {
         self.useCase = useCase
     }
     
-    func fechingData() {
-        NetworkManager.shareInstance.requestAPI(urlString: "https://api.openweathermap.org/data/2.5/forecast/daily?q=saigon&cnt=7&appid=60c6fbeb4b93ac653c492ba806fc346d&units=metric", params: nil, method: .get, enableHeader: false, success: { (response) in
-            print(response)
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+    func fechingData(_ searchString: String) {
+        showLoading(true)
+        guard let useCase = self.useCase , let delegate = delegate else { return }
+        useCase.fechingData(searchString, completion: { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let value):
+                self.results = value
+                delegate.reload()
+                self.showLoading(false)
+                break
+            case .failure(let error):
+                delegate.failed(error)
+                self.showLoading(false)
+                break
+            }
+        })
     }
     
-    func searchWithKey(_ keyString: String) {
-        
+    private func showLoading(_ isShow: Bool) {
+        if let delegate = self.delegate {
+            delegate.ativityLoading?(isShow)
+        }
     }
 }

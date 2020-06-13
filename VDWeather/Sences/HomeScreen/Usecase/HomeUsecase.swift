@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import SwiftyJSON
+import ObjectMapper
 
 protocol HomeUseCaseProvider {
-    func fechingData(_ params: [String: Any]?) -> String
+    func fechingData(_ searchString: String, completion: @escaping (BaseDataResponse<PredictionResult?>) -> Void)
 }
 
 class HomeUseCase: HomeUseCaseProvider {
-    func fechingData(_ params: [String : Any]?) -> String {
-        return "test"
+    let resposistory = DependencyContainer.shared.resolve(HomeReposistoryProtocol.self)
+    
+    func fechingData(_ searchString: String, completion: @escaping (BaseDataResponse<PredictionResult?>) -> Void) {
+        resposistory.fetchWeather(keyword: searchString, completion: completion)
     }
 }

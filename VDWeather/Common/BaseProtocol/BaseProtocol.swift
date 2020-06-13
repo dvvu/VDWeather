@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+@objc protocol BaseDelegate: class {
+    @objc optional func ativityLoading(_ isShow: Bool)
+}

@@ -9,22 +9,38 @@
 import UIKit
 
 class LoadingActivity: BaseViewController {
+    static var shared: LoadingActivity = LoadingActivity(nibName: "LoadingActivity", bundle: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.37)
+        LoadingActivity.shared = self
+    }
+    
+    private func show(_ view: UIView? = nil) {
+        if let view = view {
+            view.addSubview(self.view)
+            self.view.frame = view.bounds
+        } else {
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let window = appDelegate.window {
+                window.addSubview(self.view)
+                self.view.frame = window.bounds
+            }
+        }
+         UIView.animate(withDuration: 1) {}
+    }
+    
+    private func dismiss() {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: {
+            self.view.removeFromSuperview()
+        }) { (error) in}
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func showLoading(_ isShow: Bool, view: UIView? = nil) {
+        if isShow {
+            LoadingActivity.shared.show(view)
+        } else {
+            LoadingActivity.shared.dismiss()
+        }
     }
-    */
-
 }

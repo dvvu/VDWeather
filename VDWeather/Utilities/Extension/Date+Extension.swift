@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+extension Date {
+    func daytoString() -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, dd MM yyyy"
+        return dateFormatter.string(from: self).capitalized
+    }
+}

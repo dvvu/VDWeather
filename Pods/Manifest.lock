@@ -1,0 +1,76 @@
+PODS:
+  - Alamofire (4.8.0)
+  - AlamofireObjectMapper (5.2.1):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - IQKeyboardManagerSwift (6.5.5)
+  - Material (3.1.8):
+    - Material/Core (= 3.1.8)
+  - Material/Core (3.1.8):
+    - Motion (~> 3.1.1)
+  - Mockingjay (3.0.0-alpha.1):
+    - Mockingjay/Core (= 3.0.0-alpha.1)
+    - Mockingjay/XCTest (= 3.0.0-alpha.1)
+  - Mockingjay/Core (3.0.0-alpha.1):
+    - URITemplate (~> 3.0)
+  - Mockingjay/XCTest (3.0.0-alpha.1):
+    - Mockingjay/Core
+  - Motion (3.1.3):
+    - Motion/Core (= 3.1.3)
+  - Motion/Core (3.1.3)
+  - Nimble (8.1.1)
+  - ObjectMapper (3.5.3)
+  - Quick (3.0.0)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
+  - SnapKit (5.0.1)
+  - SwiftyJSON (5.0.0)
+  - URITemplate (3.0.0)
+
+DEPENDENCIES:
+  - Alamofire (= 4.8.0)
+  - AlamofireObjectMapper
+  - IQKeyboardManagerSwift
+  - Material
+  - Mockingjay (= 3.0.0-alpha.1)
+  - Nimble
+  - Quick
+  - SDWebImage
+  - SnapKit
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireObjectMapper
+    - IQKeyboardManagerSwift
+    - Material
+    - Mockingjay
+    - Motion
+    - Nimble
+    - ObjectMapper
+    - Quick
+    - SDWebImage
+    - SnapKit
+    - SwiftyJSON
+    - URITemplate
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
+  Mockingjay: 0f7c5aa49c7f1b95621cee3c79b557141f5a225c
+  Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
+  Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  URITemplate: 58e0d47f967006c5d59888af5356c4a8ed3b197d
+
+PODFILE CHECKSUM: 89d5975c90e98138670b2da99fef5630454119eb
+
+COCOAPODS: 1.9.1

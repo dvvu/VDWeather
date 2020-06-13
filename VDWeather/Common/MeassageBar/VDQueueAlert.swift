@@ -1,65 +1,41 @@
 //
-//  TkQueueAlert.swift
-//  TikiProject
+//  VDQueueAlert.swift
+//  VDWeather
 //
 //  Created by Vu Doan on 8/26/19.
 //  Copyright © 2019 Tiki.vn. All rights reserved.
 //
 
 import Foundation
+import UIKit
 
 class VDQueueAlert {
     static let shared = VDQueueAlert()
     let globalQueue = DispatchQueue(label: "com.vd.VDAlertQueue")
+    var snackbar: TTGSnackbar! = nil
     
-    private func doForCart(message: String, completion: @escaping ()->Void) {
+    private func addToQueue(_ message: String) {
         DispatchQueue.main.async {
-            switch type {
-            case .snaskBar:
-                if let controller = controller {
-                    controller.showSnackBarError(error: message, buttonName: "Huỷ", action: {
-                        completion()
-                    })
-                } else if let useCase = useCase {
-                    useCase.showSnackBarError(error: message, buttonName: "Huỷ", action: {
-                        completion()
-                    })
-                }
-                break
-            case .toast:
-                if let controller = controller {
-                    controller.view.makeToast(message)
-                } else if let useCase = useCase {
-                    useCase.makeToast(message)
-                }
-                break
-            default:
-                if controller != nil {
-                    
-                } else if let useCase = useCase, let product = product {
-                    useCase.showUndoViewOP.onNext(product)
-                }
-                break
-            }
+            self.showError(message)
+        }
+        sleep(3)
+    }
+    
+    func showMessageError(_ message: String) {
+        globalQueue.async {
+            self.addToQueue(message)
         }
     }
     
-    func addForCart(_ useCase: SnackBarProtocol? = nil, product: UndoProduct? = nil, controller: VirtualCheckoutCheckoutOptionViewController? = nil, type: TkAlertType, message: String, completion: @escaping ()->Void) {
-        globalQueue.async {
-            self.doForCart(useCase, product: product, controller: controller, type: type, message: message) {
-                completion()
-            }
-            switch type {
-            case .snaskBar:
-                sleep(3)
-                break
-            case .toast:
-                sleep(3)
-                break
-            default:
-                sleep(3)
-                break
-            }
+    private func showError(_ message: String) {
+        if (snackbar != nil) {
+            snackbar.dismiss()
         }
+        snackbar = TTGSnackbar(message: message, duration: .forever, actionText: "", actionBlock: { (snackbar) in
+            snackbar.dismiss()
+        })
+        snackbar.duration = .middle
+        snackbar.animationType = .slideFromBottomToTop
+        snackbar.show()
     }
 }

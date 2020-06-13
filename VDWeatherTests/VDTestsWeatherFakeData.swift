@@ -11,7 +11,7 @@ import XCTest
 import Mockingjay
 @testable import VDWeather
 
-class VDTests2: XCTestCase {
+class VDTestsWeatherFakeData: XCTestCase {
     var useCase: HomeUseCase?
     let stubApi: String = "\(VDNetworkConstant.endPoint)forecast/daily?q=saigon&cnt=7&appid=\(VDNetworkConstant.appId)&units=metric"
     
@@ -27,8 +27,8 @@ class VDTests2: XCTestCase {
     func testNetworkWeather() {
         let expectation = XCTestExpectation(description: "Test case Success")
         stubRequest(stubApi, fileName: "weather_success")
+       
         useCase?.fechingData("saigon", completion: { result in
-            
             if case let .success(result: predictions) = result {
                 XCTAssert(predictions?.city?.name == "Vu Doan City")
                 // Write what data you need to test

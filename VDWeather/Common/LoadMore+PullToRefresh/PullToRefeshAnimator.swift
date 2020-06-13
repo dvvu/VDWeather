@@ -11,12 +11,11 @@ import UIKit
 
 open class PullToRefreshAnimator: UIView, PullToRefreshDelegate {
     
-    open var spinner = UIActivityIndicatorView()
+    open var spinner = UIActivityIndicatorView(style: .gray)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         autoresizingMask = .flexibleWidth
-        spinner.style = .medium
         addSubview(spinner)
         spinner.isHidden = true
     }

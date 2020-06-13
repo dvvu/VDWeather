@@ -14,7 +14,7 @@ protocol SearchController: UISearchBarDelegate {}
 
 extension SearchController where Self: UIViewController {
     
-    func configureNavigationBar(_ view: UIView) {
+    func configureSearchBar(_ view: UIView) {
         if let navigationController = navigationController {
             navigationController.navigationBar.isTranslucent = false
             navigationController.navigationBar.shadowImage = UIImage()
@@ -46,21 +46,3 @@ extension SearchController where Self: UIViewController {
     }
 }
 
-
-// Delegate we can implement in main controller
-
-@objc protocol VDNavigation {
-    @objc func addTapped(sender: UIBarButtonItem)
-}
-
-extension VDNavigation where Self: UIViewController {
-    func configureNavigationBar() {
-        if let navigationController = navigationController {
-            navigationController.navigationBar.isTranslucent = false
-            navigationController.navigationBar.shadowImage = UIImage()
-            navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
-            navigationController.navigationBar.barTintColor = UIColor.blue
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "test", style: .done, target: self, action: #selector(addTapped))
-        }
-    }
-}

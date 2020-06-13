@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import UIKit
+import ObjectMapper
+
+public let transformAnyToString = TransformOf<String, Any>(fromJSON: { (value: Any?) -> String? in
+    if let value = value {
+        if value is NSNumber {
+            let numberValue = value as! NSNumber
+            return numberValue.stringValue
+        } else if value is String {
+            return value as? String
+        }
+    }
+    return ""
+}, toJSON: { (value: String?) -> String? in
+    return value
+})

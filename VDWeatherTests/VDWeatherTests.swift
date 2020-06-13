@@ -7,28 +7,69 @@
 //
 
 import XCTest
+import Mockingjay
 @testable import VDWeather
 
-class VDWeatherTests: XCTestCase {
+class HomeReposistoryFailed: HomeReposistoryProtocol {
+    func fetchWeather(keyword: String, completion: @escaping (BaseDataResponse<PredictionResult?>) -> Void) {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            completion(.failure(error: NSError(domain: "HELLO", code: 1001, userInfo: [:])))
+//        }
+    }
+}
 
+class HomeResposistorySuccess: HomeReposistoryProtocol {
+    func fetchWeather(keyword: String, completion: @escaping (BaseDataResponse<PredictionResult?>) -> Void) {
+        // Do something return completion success
+        completion(.success(result: nil))
+    }
+}
+
+class VDWeatherTests: XCTestCase {
+    var useCase: HomeUseCase?
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testFetchWeatherFailed() {
+        let expectation = XCTestExpectation(description: "Testcase")
+        DependencyContainer.shared.add(type: HomeReposistoryProtocol.self) { HomeReposistoryFailed() }
+        useCase = HomeUseCase()
+        useCase?.fechingData("TEST FAIL") { result in
+            var returnBool = false
+            switch result {
+            case .success(result: _):
+                returnBool = false
+            case .failure(error: _):
+                returnBool = true
+            }
+            XCTAssertTrue(returnBool)
+            
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testFetchWeatherSuccess() {
+        let expectation = XCTestExpectation(description: "Test case Success")
+        
+        DependencyContainer.shared.add(type: HomeReposistoryProtocol.self) { HomeResposistorySuccess() }
+        useCase = HomeUseCase()
+        useCase?.fechingData("TEST SUCCESS") { result in
+            var returnBool = false
+            switch result {
+            case .success(result: _):
+                returnBool = true
+            case .failure(error: _):
+                returnBool = false
+            }
+            XCTAssertTrue(returnBool)
+            expectation.fulfill()
         }
     }
-
 }

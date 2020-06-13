@@ -7,3 +7,25 @@
 //
 
 import Foundation
+
+protocol SettingUseCaseProvider {
+    func selectTemperature(_ temperatureType: TemperatureType, model: SettingModel, completion: @escaping (BaseDataResponse<SettingModel?>) -> Void)
+    func dayCount(_ isPlus: Bool, model: SettingModel, completion: @escaping (BaseDataResponse<SettingModel?>) -> Void)
+    func save(_ model: SettingModel, completion: @escaping (BaseDataResponse<SettingModel?>) -> Void)
+}
+
+class SettingUseCase: SettingUseCaseProvider {
+    let resposistory = DependencyContainer.shared.resolve(SettingReposistoryProtocol.self)
+    
+    func save(_ model: SettingModel, completion: @escaping (BaseDataResponse<SettingModel?>) -> Void) {
+        resposistory.save(model, completion: completion)
+    }
+    
+    func selectTemperature(_ temperatureType: TemperatureType, model: SettingModel, completion: @escaping (BaseDataResponse<SettingModel?>) -> Void) {
+        resposistory.selectTemperature(temperatureType, model: model, completion: completion)
+    }
+    
+    func dayCount(_ isPlus: Bool, model: SettingModel, completion: @escaping (BaseDataResponse<SettingModel?>) -> Void) {
+        resposistory.dayCount(isPlus, model: model, completion: completion)
+    }
+}

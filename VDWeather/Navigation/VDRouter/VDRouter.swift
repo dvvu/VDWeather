@@ -43,8 +43,15 @@ public class VDRouter: NSObject {
     
     public class func viewController(_ urlString: String, settings: VDRouterItemSettingProtocol? = nil) -> UIViewController? {
         for routerItem in routerItems {
-            if urlString.hasPrefix(routerItem.url), let cls = routerItem.handlerClass as? VDRouterProtocol.Type, let vc = cls.viewController(urlString: urlString, settings: settings) {
-                return vc
+            if urlString.hasPrefix(routerItem.url) {
+                if let cls = routerItem.handlerClass as? VDRouterProtocol.Type {
+                    if let vc = cls.viewController(urlString: urlString, settings: settings) {
+                        return vc
+                    }
+                } else if let cls = routerItem.handlerClass as? UIViewController.Type {
+                    let vc = cls.init(nibName: nil, bundle: nil)
+                    return vc
+                }
             }
         }
         
@@ -55,3 +62,5 @@ public class VDRouter: NSObject {
         VDRouterUtilities.backToRoot(animated: animated, completion: completion)
     }
 }
+
+

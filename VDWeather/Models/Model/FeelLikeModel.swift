@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import ObjectMapper
+
+class FeelLikeModel: Mappable {
+    var day: Float?
+    var night: Float?
+    var eve: Float?
+    var morn: Float?
+    
+    required public init?(map: Map) {}
+    
+    public func mapping(map: Map) {
+        day <- map["day"]
+        night <- map["night"]
+        eve <- map["eve"]
+        morn <- map["morn"]
+    }
+}
