@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
+import ObjectMapper
 
 class NetworkManager: NSObject {
     
@@ -58,7 +59,6 @@ class NetworkManager: NSObject {
                     failure(error)
                 }
             } else {
-                // network error
                 if let error: Error = response.result.error {
                     self.internetConnectionFaild(error: error as NSError)
                     failure(error)

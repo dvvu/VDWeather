@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8557A44FA8A9F37CEF036609 /* Pods_VDWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1202F0FD5EBE0948ACE5933 /* Pods_VDWeather.framework */; };
+		C717BBC424A2052A00B6A0E4 /* HomeUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C717BBC324A2052A00B6A0E4 /* HomeUseCaseTest.swift */; };
+		C717BBC824A20AAF00B6A0E4 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C717BBC724A20AAF00B6A0E4 /* TestUtils.swift */; };
 		C75BFB13249498CA00E20016 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75BFB12249498CA00E20016 /* SettingViewModel.swift */; };
 		C75BFB152494991500E20016 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75BFB142494991500E20016 /* SettingModel.swift */; };
 		C75BFB1A24949C9100E20016 /* SettingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75BFB1924949C9100E20016 /* SettingUseCase.swift */; };
@@ -74,6 +76,10 @@
 		C76D1B81248F8DAB00EEA27E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D1B80248F8DAB00EEA27E /* HomeViewModel.swift */; };
 		C76D1B83248F903B00EEA27E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D1B82248F903B00EEA27E /* BaseViewModel.swift */; };
 		C76D1B86248F90A300EEA27E /* HomeUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D1B85248F90A300EEA27E /* HomeUsecase.swift */; };
+		C7818F6924A2F76A00A871B1 /* weather_fail.json in Resources */ = {isa = PBXBuildFile; fileRef = C7818F6824A2F76A00A871B1 /* weather_fail.json */; };
+		C7818F6B24A3044A00A871B1 /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7818F6A24A3044A00A871B1 /* Error+Extension.swift */; };
+		C7818F6D24A307B600A871B1 /* HomeReponsitoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7818F6C24A307B600A871B1 /* HomeReponsitoryTest.swift */; };
+		C7818F6F24A331C100A871B1 /* VDContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7818F6E24A331C100A871B1 /* VDContainer.swift */; };
 		E14F6033012F8B2F81E0C7A1 /* Pods_VDWeather_VDWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B42B075E7522D06F558A42 /* Pods_VDWeather_VDWeatherTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +98,8 @@
 		261F4F96C3A0EB3F0B3FCAFA /* Pods-VDWeather-VDWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDWeather-VDWeatherTests.release.xcconfig"; path = "Target Support Files/Pods-VDWeather-VDWeatherTests/Pods-VDWeather-VDWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		84B71F64750DE8ADF7737577 /* Pods-VDWeather-VDWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDWeather-VDWeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-VDWeather-VDWeatherTests/Pods-VDWeather-VDWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C210CBF861109688A24F453 /* Pods-VDWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDWeatherTests.release.xcconfig"; path = "Target Support Files/Pods-VDWeatherTests/Pods-VDWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
+		C717BBC324A2052A00B6A0E4 /* HomeUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseTest.swift; sourceTree = "<group>"; };
+		C717BBC724A20AAF00B6A0E4 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		C75BFB12249498CA00E20016 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		C75BFB142494991500E20016 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		C75BFB1924949C9100E20016 /* SettingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUseCase.swift; sourceTree = "<group>"; };
@@ -165,6 +173,10 @@
 		C76D1B80248F8DAB00EEA27E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C76D1B82248F903B00EEA27E /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		C76D1B85248F90A300EEA27E /* HomeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUsecase.swift; sourceTree = "<group>"; };
+		C7818F6824A2F76A00A871B1 /* weather_fail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weather_fail.json; sourceTree = "<group>"; };
+		C7818F6A24A3044A00A871B1 /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
+		C7818F6C24A307B600A871B1 /* HomeReponsitoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReponsitoryTest.swift; sourceTree = "<group>"; };
+		C7818F6E24A331C100A871B1 /* VDContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VDContainer.swift; sourceTree = "<group>"; };
 		C832AE0745CFD9089C908CB7 /* Pods-VDWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDWeather.debug.xcconfig"; path = "Target Support Files/Pods-VDWeather/Pods-VDWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		D1202F0FD5EBE0948ACE5933 /* Pods_VDWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VDWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B42B075E7522D06F558A42 /* Pods_VDWeather_VDWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VDWeather_VDWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +214,30 @@
 				8C210CBF861109688A24F453 /* Pods-VDWeatherTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C717BBC224A2051500B6A0E4 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				C717BBC324A2052A00B6A0E4 /* HomeUseCaseTest.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		C717BBC524A2084400B6A0E4 /* Responsitory */ = {
+			isa = PBXGroup;
+			children = (
+				C7818F6C24A307B600A871B1 /* HomeReponsitoryTest.swift */,
+			);
+			path = Responsitory;
+			sourceTree = "<group>";
+		};
+		C717BBC624A20A8C00B6A0E4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C717BBC724A20AAF00B6A0E4 /* TestUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		C75BFB11249498B000E20016 /* SettingViewModel */ = {
@@ -326,6 +362,7 @@
 				C75CBCE82492699000620ACB /* UIImageView+Extension.swift */,
 				C75CBCEB24927F4B00620ACB /* ObjectMapper+Extension.swift */,
 				C75BFB1D2494F8E700E20016 /* Date+Extension.swift */,
+				C7818F6A24A3044A00A871B1 /* Error+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -335,6 +372,7 @@
 			children = (
 				C760B1012493D813008B6F3C /* VDRouter */,
 				C760B10B2493D9CC008B6F3C /* VDRouterHandler.swift */,
+				C7818F6E24A331C100A871B1 /* VDContainer.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -362,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				C766C0862493410700E324FC /* weather_success.json */,
+				C7818F6824A2F76A00A871B1 /* weather_fail.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -427,6 +466,9 @@
 		C76D1B41248F46B000EEA27E /* VDWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
+				C717BBC624A20A8C00B6A0E4 /* Utils */,
+				C717BBC524A2084400B6A0E4 /* Responsitory */,
+				C717BBC224A2051500B6A0E4 /* UseCase */,
 				C766C085249340EE00E324FC /* Fixtures */,
 				C76D1B44248F46B000EEA27E /* Info.plist */,
 				C76D1B42248F46B000EEA27E /* VDWeatherTests.swift */,
@@ -665,6 +707,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7818F6924A2F76A00A871B1 /* weather_fail.json in Resources */,
 				C766C0872493410700E324FC /* weather_success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,6 +804,7 @@
 				C76D1B81248F8DAB00EEA27E /* HomeViewModel.swift in Sources */,
 				C760B1062493D82B008B6F3C /* VDRouterSetting.swift in Sources */,
 				C76D1B6A248F4E1100EEA27E /* VDAccountManager.swift in Sources */,
+				C7818F6B24A3044A00A871B1 /* Error+Extension.swift in Sources */,
 				C75BFB1C24949CD900E20016 /* SettingReposistory.swift in Sources */,
 				C766C097249380C000E324FC /* VDHomeScence+TableView.swift in Sources */,
 				C760B1072493D82B008B6F3C /* VDRouter.swift in Sources */,
@@ -775,6 +819,7 @@
 				C75F114324922952002B0B1B /* SearchController.swift in Sources */,
 				C766C093249379A700E324FC /* VDNavigationController.swift in Sources */,
 				C75F1140249219BF002B0B1B /* BaseProtocol.swift in Sources */,
+				C7818F6F24A331C100A871B1 /* VDContainer.swift in Sources */,
 				C75F114824923483002B0B1B /* VDQueueAlert.swift in Sources */,
 				C76D1B30248F46AE00EEA27E /* ViewController.swift in Sources */,
 				C76D1B83248F903B00EEA27E /* BaseViewModel.swift in Sources */,
@@ -819,6 +864,9 @@
 			files = (
 				C766C0892493458400E324FC /* VDTestsWeatherFakeData.swift in Sources */,
 				C766C08B24936B9000E324FC /* VDWeatherTestSpecs.swift in Sources */,
+				C717BBC424A2052A00B6A0E4 /* HomeUseCaseTest.swift in Sources */,
+				C7818F6D24A307B600A871B1 /* HomeReponsitoryTest.swift in Sources */,
+				C717BBC824A20AAF00B6A0E4 /* TestUtils.swift in Sources */,
 				C76D1B43248F46B000EEA27E /* VDWeatherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

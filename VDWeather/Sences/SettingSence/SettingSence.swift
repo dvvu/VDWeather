@@ -19,7 +19,7 @@ class SettingSence: BaseViewController {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var subButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
-    private var viewModel: SettingViewModel?
+    lazy var viewModel: SettingViewModel? = VDContainer.shared.resolve(SettingViewModel.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,9 +140,8 @@ extension SettingSence: SettingViewModelDelegate {
 
 // New Instance
 extension SettingSence {
-    static func newInstance(viewModel: SettingViewModel) -> SettingSence {
+    static func newInstance() -> SettingSence {
         let vc = SettingSence(nibName: "SettingSence", bundle: nil)
-        vc.viewModel = viewModel
         return vc
     }
 }

@@ -16,9 +16,7 @@ class PredictionResult: Mappable {
     var message: Float?
     var cnt: Int?
     
-    required public init?(map: Map) {
-        
-    }
+    required public init?(map: Map) {}
     
     public func mapping(map: Map) {
         city <- map["city"]

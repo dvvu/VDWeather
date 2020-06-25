@@ -11,7 +11,10 @@ import UIKit
 class VDHomeScence: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var viewModel: HomeViewModel?
+    lazy var viewModel: HomeViewModel? = {
+        return VDContainer.shared.resolve(HomeViewModel.self)
+    }()
+    
     var searchString: String = ""
     
     override func viewDidLoad() {
@@ -73,9 +76,8 @@ extension VDHomeScence: HomeViewModelDelegate {
 
 // New Instance
 extension VDHomeScence {
-    static func newInstance(viewModel: HomeViewModel) -> VDHomeScence {
+    static func newInstance() -> VDHomeScence {
         let vc = VDHomeScence(nibName: "VDHomeScence", bundle: nil)
-        vc.viewModel = viewModel
         return vc
     }
 }

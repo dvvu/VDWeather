@@ -15,7 +15,7 @@ import UIKit
 public class VDRouterHandler: VDRouterProtocol {
     public static func viewController(urlString: String, settings: VDRouterItemSettingProtocol?) -> UIViewController? {
         if urlString == "/weather/setting" {
-            let vc = SettingSence.newInstance(viewModel: SettingViewModel(SettingUseCase()))
+            let vc = SettingSence.newInstance()
             return vc
         }
         return nil

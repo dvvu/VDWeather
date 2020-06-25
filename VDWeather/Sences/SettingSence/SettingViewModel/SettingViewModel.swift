@@ -16,13 +16,13 @@ protocol SettingViewModelDelegate: BaseDelegate {
 }
 
 class SettingViewModel: BaseViewModel {
-    private var useCase: SettingUseCase?
+    private var useCase: SettingUseCaseProvider?
     weak var delegate: SettingViewModelDelegate?
     // default of caching
     var results = SettingModel(VDAccountManager.shared.dayCount, temperatureType:  VDAccountManager.shared.temperatureType)
     
-    init(_ useCase: SettingUseCase) {
-        self.useCase = useCase
+    override init() {
+        self.useCase = VDContainer.shared.resolve(SettingUseCaseProvider.self)
     }
     
     func selectTemperature(_ type: TemperatureType) {

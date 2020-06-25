@@ -8,17 +8,63 @@
 
 import Foundation
 
-public class DependencyContainer {
-    public static let shared = DependencyContainer()
-    var factoryDict: [String: () -> Any] = [:]
-  
-    public func add(type: Any.Type, _ factory: @escaping () -> Any) {
-        factoryDict[String(describing: type.self)] = factory
+public protocol ResolverType {
+    func resolve<Component>(_ type: Component.Type, module: String) -> Component?
+}
+
+public protocol ModuleContainerProtocol {
+    var container: ContainerProtocol { get }
+    static var module: String { get }
+    func resolve<Component>(_ type: Component.Type) -> Component?
+    func add(type: Any.Type, _ factory: @escaping (ResolverType) -> Any)
+    func dispose()
+}
+
+public extension ModuleContainerProtocol {
+    func resolve<Component>(_ type: Component.Type) -> Component? {
+        self.container.resolve(type, module: Self.module)
+    }
+
+    func add(type: Any.Type, _ factory: @escaping (ResolverType) -> Any) {
+        self.container.add(type: type, module: Self.module, factory)
     }
     
-    public func resolve<Component>(_ type: Component.Type) -> Component {
-        let component: Component = factoryDict[String(describing:Component.self)]?() as! Component
-        return component
+    func dispose() {
+        self.container.dispose()
+    }
+}
+
+public protocol ContainerProtocol: ResolverType {
+    static var shared: ContainerProtocol { get }
+    func add(type: Any.Type, module: String, _ factory: @escaping (ResolverType) -> Any)
+    func dispose()
+}
+
+public class DependencyContainer: ContainerProtocol {
+    public func dispose() {
+        factoryDict = [:]
+    }
+    
+    public static let shared: ContainerProtocol = DependencyContainer()
+    var factoryDict: [String: (ResolverType) -> Any] = [:]
+    
+    private func getKey(_ type: Any.Type, module: String) -> String {
+        return "\(module)_\(String(describing: type.self))"
+    }
+    
+    public func add(type: Any.Type, module: String, _ factory: @escaping (ResolverType) -> Any) {
+        factoryDict[getKey(type, module: module)] = factory
+    }
+    
+    public func resolve<Component>(_ type: Component.Type, module: String) -> Component? {
+        let componentName = getKey(type, module: module)
+        if let component = factoryDict[componentName]?(self) as? Component {
+            NSLog("DI Container: successfully get component: \(componentName)")
+            return component
+        }
+        
+        NSLog("DI Container: unable to resolve component: \(componentName)")
+        return nil
     }
 }
 

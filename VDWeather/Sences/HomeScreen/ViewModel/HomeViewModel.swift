@@ -14,12 +14,12 @@ protocol HomeViewModelDelegate: BaseDelegate {
 }
 
 class HomeViewModel: BaseViewModel {
-    private var useCase: HomeUseCase?
+    private var useCase: HomeUseCaseProvider?
     weak var delegate: HomeViewModelDelegate?
     var results: PredictionResult?
     
-    init(_ useCase: HomeUseCase) {
-        self.useCase = useCase
+    override init() {
+        self.useCase = VDContainer.shared.resolve(HomeUseCaseProvider.self)
     }
     
     func fechingData(_ searchString: String) {

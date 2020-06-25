@@ -20,5 +20,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "233E3B09-93FA-4FB1-90F6-A6975D5D6ED9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VDWeatherTests/UseCase/HomeUseCaseTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "testHomeUseCaseSuccess()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "233E3B09-93FA-4FB1-90F6-A6975D5D6ED9 - e7464e3ce975f13f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VDWeatherTests.HomeUseCaseTest.testHomeUseCaseSuccess() -&gt; ()"
+                  moduleName = "VDWeatherTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lap01304/Desktop/VDWeather/VDWeatherTests/UseCase/HomeUseCaseTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "561">
+               </Location>
+               <Location
+                  uuid = "233E3B09-93FA-4FB1-90F6-A6975D5D6ED9 - 574987f3538c9da1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (VDWeather.BaseDataResponse&lt;Swift.Optional&lt;VDWeather.PredictionResult&gt;&gt;) -&gt; () in VDWeatherTests.HomeUseCaseTest.testHomeUseCaseSuccess() -&gt; ()"
+                  moduleName = "VDWeatherTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lap01304/Desktop/VDWeather/VDWeatherTests/UseCase/HomeUseCaseTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "123">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4496D7F-69FB-4E3F-B1CF-381051E14FF1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VDWeatherTests/UseCase/HomeUseCaseTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

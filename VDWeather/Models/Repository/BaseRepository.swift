@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectMapper
 
 enum BaseDataResponse<T> {
     case success(result: T)

@@ -15,9 +15,9 @@ protocol HomeUseCaseProvider {
 }
 
 class HomeUseCase: HomeUseCaseProvider {
-    let resposistory = DependencyContainer.shared.resolve(HomeReposistoryProtocol.self)
+    let resposistory = VDContainer.shared.resolve(HomeReposistoryProtocol.self)
     
     func fechingData(_ searchString: String, completion: @escaping (BaseDataResponse<PredictionResult?>) -> Void) {
-        resposistory.fetchWeather(keyword: searchString, completion: completion)
+        resposistory?.fetchWeather(keyword: searchString, completion: completion)
     }
 }

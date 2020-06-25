@@ -19,18 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 18)!]
         VDRouterHandler.registerModule()
-        self.registerDependencies()
-        let viewModel = HomeViewModel(HomeUseCase())
-        let vc = VDHomeScence.newInstance(viewModel: viewModel)
+        VDContainer.shared.initDependency()
+        let vc = VDHomeScence.newInstance()
         let homeNavigationController = UINavigationController(rootViewController: vc)
         self.window?.rootViewController = homeNavigationController
         self.window?.makeKeyAndVisible()
         return true
-    }
-    
-    func registerDependencies() {
-        DependencyContainer.shared.add(type: HomeReposistoryProtocol.self) { HomeReposistory() }
-        DependencyContainer.shared.add(type: SettingReposistoryProtocol.self) { SettingReposistory() }
     }
 }
 
