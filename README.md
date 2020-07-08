@@ -1,5 +1,4 @@
 # VDWeather
-[![Build 
 VDWeather is a apply supporting predicte the weather.
 
 ## Example
